@@ -36,7 +36,7 @@ function App() {
             <Route path='/upload-movie' element={<UploadMovie/>} /> {/* Ruta para la pagina de registro*/}
             <Route path='/restablecimiento' element={<ForgotPasswordForm/>} /> {/* Ruta para la pagina de restablecimiento de contraseña*/}
             <Route path='/movie-gallery' element={<MovieGallery/>} />
-            <Route path='/profileAdmin' element={<ProfileAdmin/>} />
+            <Route path='/ProfileAdmin' element={<ProfileAdmin/>} />
 
           </Routes>
       
