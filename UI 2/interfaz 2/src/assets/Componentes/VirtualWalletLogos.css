@@ -1,0 +1,20 @@
+.virtual-wallet-logos {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre los logos de billeteras */
+}
+
+.wallet-logo {
+  height: 25px; /* Ajusta el tamaño de los logos de billeteras */
+  object-fit: contain;
+}
+
+.Nequi{
+  height: 20px;
+  width:auto;
+}
+
+.Daviplata{
+  height: 40px;
+  width:auto;
+}

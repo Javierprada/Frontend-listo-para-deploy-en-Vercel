@@ -1,0 +1,40 @@
+.plans-header {
+    display: flex;
+    position: relative;
+    
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-20px);
+    margin-top: 30px;
+    
+    color: #e926b2; /* Color rosa/púrpura */
+    font-size: 2.9em;
+    font-weight: bold;
+    text-shadow: 2px 5px 10px rgba(0, 229, 255, 0.739);
+}
+
+
+.plans-header-icon{
+    position: relative;
+    justify-content: center;
+    display: flex;
+    font-size: 1.2rem; /* Tamaño del ícono */
+    margin-top: 30px;
+    margin-right: 45px; /* Espacio a la derecha del icono */
+    color: #e926b2;
+    filter: drop-shadow(5px 5px 10px rgba(8, 255, 189, 0.81)); 
+   
+}
+
+
+
+.plans-header-title {
+    align-items: center; /* Tamaño del titulo */
+    font-weight: bold; /* */
+    color: #ff00a2; /* Mismo color rosa/púrpura para el título */
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1em; /* Relativo al tamaño del contenedor padre .plans-header */
+    margin: 0; /* Elimina margenes por defecto en H1 - H2*/
+}
+

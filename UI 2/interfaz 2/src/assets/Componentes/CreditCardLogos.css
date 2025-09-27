@@ -1,0 +1,11 @@
+.credit-card-logos {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre los logos de tarjetas */
+}
+
+.card-logo {
+  height: 20px; /* Ajusta el tamaño de los logos de tarjetas */
+  object-fit: contain;
+  
+}

@@ -1,0 +1,41 @@
+.feature-row {
+    display: flex;
+    justify-content: center; /* Espacio entre el nombre y los valores */
+    align-items: center;
+    margin-left: 35px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.2); /* Línea divisoria suave */
+    color: #ecf0f1; /* Color de texto general */
+    font-size: 0.95em;
+   
+}
+
+.feature-row:last-child {
+    border-bottom: none; /* Eliminar la línea en la última fila */
+}
+
+.feature-name {
+    display: flex;
+    
+    /*text-align: center;
+    /*flex: 4; /* Ocupa más espacio para el nombre de la característica */
+    font-weight: bold;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    
+    
+}
+
+.feature-value-basic,
+.feature-value-premium {
+    flex: 1; /* Ocupa una parte igual del espacio para los valores */
+    text-align: center;
+    padding: 0 10px;
+}
+
+/* Estilos específicos para el ícono de audio */
+.audio-icon {
+    font-size: 1.9em; /* Ajusta el tamaño del icono de audio */
+    color: #2ecc71; /* Un color distintivo para el icono de "Sí" */
+    margin-left: 5px;
+}

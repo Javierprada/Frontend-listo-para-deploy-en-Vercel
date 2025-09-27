@@ -1,0 +1,245 @@
+.movie-details-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+ 
+  
+  
+}
+
+
+
+
+
+
+
+
+
+.background-video-1 {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+  background-color: #000;
+}
+
+
+
+
+.video-hall {
+  
+  width: 100%; /* El video ocupará el 100% del ancho de su contenedor (.Card-shadow) */
+  height: auto; /* La altura se ajustará proporcionalmente */
+  max-height: 250px; /* Opcional: limita la altura máxima para que no sea muy grande */
+  object-fit: cover; /* Recorta el video para que cubra el área sin distorsión (si es un fondo o más grande) */
+  border-radius: 12px; /* Opcional: bordes redondeados para el video */
+  
+  z-index: 2;
+}
+
+
+.video-hall {
+  transform: translateY(-45px);
+}
+
+
+
+
+
+
+
+.content {
+  position: absolute; /* Permite posicionar elementos hijos con 'absolute' o 'fixed', y usar 'z-index'. */  
+  max-width: 500px; /* Ancho máximo para el texto */
+  text-align: center; /* Centra el texto y contenido en línea dentro de este contenedor. */
+  color: rgb(215, 14, 142); /* Color del texto */
+  text-transform: uppercase; /* Convertir a mayúsculas */
+  z-index: 1;
+}
+
+
+
+
+
+.content h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: block;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 2rem; /* Tamaño del título */  
+  text-shadow: 2px 2px 4px rgba(33, 229, 219, 1.0); /* Sombra para el título */
+  padding-top: 3px; /* Añade un relleno (espacio interno) de 3px en la parte superior. */
+  
+}
+
+
+
+.content h1 {
+  transform: translateY(-70px);
+}
+
+
+
+
+.Card-shadow {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    z-index: 2;
+    color: rgb(255, 0, 162);
+    max-width: 400px;
+    height: 505px;
+    text-align: center;
+    border-radius: 12px;
+    gap: 8px;
+    box-shadow: 0 0 18px rgb(255, 0, 162);
+    background-color:rgba(53, 53, 53, 0.589);
+}
+
+
+
+.Card-shadow {
+  transform: translateY(-20px);
+}
+
+
+
+.button-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 15px;
+  z-index: 2;
+
+
+
+}
+
+
+.button-group {
+  transform: translateY(30px);
+}
+
+
+
+
+.btn-register {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(49, 181, 224);
+  color: rgb(215, 14, 142);
+  border: 2px solid rgb(32, 254, 77);
+  border-radius: 4px;
+  padding: 10px;
+  
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  max-width: 15rem;
+  height: 50px;
+  transition: background-color 0.3s ease;
+  
+}
+
+.btn-register:hover{
+  fill: rgb(0, 255, 242);
+}
+
+.btn-register:hover {
+  background-color: rgb(215, 14, 142); /*fondo al hacer hover */
+  color: rgb(0, 255, 242); /* al hacer hover! */
+  border-color: rgb(32, 250, 254); /* Borde al hacer hover */
+}
+
+
+
+.iniciar-sesión {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(49, 181, 224);
+  color: rgb(215, 14, 142);
+  border: 2px solid rgb(32, 254, 77);
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  max-width: 15rem;
+  height: 50px;
+  align-items: center;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  
+ 
+}
+
+
+
+
+
+
+
+.iniciar-sesión:hover svg {
+  fill: rgb(0, 255, 242);
+  
+}
+
+.iniciar-sesión:hover {
+    background-color: rgb(215, 14, 142); /*fondo al hacer hover */
+    color: rgb(0, 255, 242); /* al hacer hover! */
+    border-color: rgb(32, 250, 254); /* Borde al hacer hover */
+   
+}
+
+
+
+
+
+
+/* Para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .movie-details-container {
+    padding: 1rem;
+    align-items: flex-end; /* Alinea el contenido abajo en móviles */
+    text-align: center;
+  }
+
+  .content {
+    max-width: 100%;
+  }
+
+  .content h1 {
+    font-size: 2.5rem;
+  }
+
+  .metadata,
+  .description {
+    font-size: 1rem;
+  }
+
+  .buttons {
+    flex-direction: column; /* Apila los botones en móviles */
+  }
+
+  .iniciar-sesión,
+  .btn-more-register{
+    width: 100%;
+    justify-content: center; /* Centra el texto y el icono en botones apilados */
+  }
+}

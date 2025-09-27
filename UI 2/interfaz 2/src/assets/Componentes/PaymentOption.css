@@ -1,0 +1,50 @@
+/* src/components/PaymentOption.css */
+.payment-option {
+  background-color: #18d5c9; /* Establece el color de fondo*/
+  border-radius: 8px; /* Aplica un radio de borde de 8 píxeles para esquinas ligeramente redondeadas */
+  padding: 12px 20px; /* Establece un relleno interno: 15px arriba y abajo, 20px a la izquierda y derecha */
+  display: flex; /* Habilita el modelo de caja flexible (flexbox) para el contenedor, permitiendo el control de la alineación de sus hijos */
+  justify-content: space-between; /* Distribuye el espacio horizontalmente, empujando el primer elemento al inicio y el último al final, con espacio entre ellos */
+  align-items: center; /*Centra verticalmente los elementos hijos dentro del contenedor flex */
+  cursor: pointer; /* Cambia el cursor a una mano (puntero) cuando el ratón está sobre el elemento, indicando que es clickeable */
+  transition: background-color 0.2s ease; /* Aplica una transición suave de 0.2 segundos al cambiar el color de fondo, con una curva de aceleración 'ease' */
+  margin-bottom: 20px; /* Añade un margen de 20 píxeles en la parte inferior para separar las opciones de pago */
+  box-shadow: 3px 4px 2px rgb(239, 22, 134);
+  
+  max-width: 900px;
+}
+
+.payment-option:hover {
+  background-color: rgb(239, 22, 134); /* Cambia el color de fondo cuando se pasa el ratón por encima */
+  box-shadow: 3px 4px 5px rgba(255, 255, 255, 0.5); /* Opcional: una sombra más clara al hacer hover para "resaltar" */
+}
+
+.payment-option-title {
+  color: #e926b2; /* Color de texto oscuro para el título */
+  font-weight: bold; /* Hace que el texto sea más grueso (negrita) */
+  font-size: 1.1rem; /* Establece el tamaño de la fuente a 1.1 veces el tamaño de la fuente base del documento */
+  padding-right: 20px; /* Añade un relleno de 20 píxeles a la derecha del título, creando un gran espacio entre el título y los logotipos */
+  
+}
+
+.payment-option:hover .payment-option-title{
+  color: rgb(0, 179, 255);
+}
+
+
+
+
+.payment-option-details {
+  display: flex; /* Habilita flexbox para este contenedor */
+  align-items: center; /* Centra verticalmente los elementos hijos (logotipos y indicador de acción) dentro de este contenedor */
+  gap: 15px; /* Espacio entre los logos y el indicador de acción */
+  flex-direction: column;
+}
+
+.payment-option-logos {
+  display: flex; /* Habilita flexbox para este contenedor */
+  gap: 10px; /* Espacio entre los logos individuales */
+
+}
+
+

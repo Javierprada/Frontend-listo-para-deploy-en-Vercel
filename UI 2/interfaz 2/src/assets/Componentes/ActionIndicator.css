@@ -1,0 +1,5 @@
+.action-indicator {
+  font-weight: bold; /* Hace que el texto (o icono basado en fuente) sea más grueso (negrita) */
+  font-size: 1.2rem; /* Establece el tamaño de la fuente a 1.2 veces el tamaño de la fuente base del documento */
+  color: #777; /* Color de las flechas */
+}

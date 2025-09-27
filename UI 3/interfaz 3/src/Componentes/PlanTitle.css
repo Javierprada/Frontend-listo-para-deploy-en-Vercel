@@ -1,0 +1,14 @@
+.plan-title {
+    margin-left: 15px;
+    padding: 10px 0;
+    font-size: 1.4em;
+    font-weight: bold;
+   
+    text-align: center;
+    
+    margin-bottom: 10px;
+    text-transform: uppercase; /* Convertir a mayúsculas */
+    letter-spacing: 2px;
+    
+}
+

@@ -1,0 +1,166 @@
+
+
+.img-h2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: 'Times New Roman', Times, serif;
+    align-items: center;
+    
+    font-size: 2.5rem;
+    
+    
+    color: rgb(215, 14, 142);
+    text-shadow: 1px 1px 3px rgb(49, 181, 224);
+}
+
+
+.img {
+  
+  
+  width: 6rem;
+  height: 6rem;
+  margin: 20px 10px;
+  vertical-align: middle;
+}
+
+
+
+.video-background-gallery {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -2;
+  pointer-events: none;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  
+  padding: 0.2rem;
+  max-width: 1200px;
+  
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+  background-color: #2a2a2a;
+  border-radius: 12px;
+  padding: 0.6rem;
+  width: 320px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.694);
+  border-radius: 12px;
+  box-shadow: 0 0 18px rgba(215, 14, 142, 0.6);
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.h-4 {
+  margin: 10px;
+}
+
+.movie-card:hover {
+  transform: scale(1.09);
+}
+
+.movie-poster {
+  width: 90%;
+  border-radius: 8px;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 0.4rem;
+}
+
+button {
+  
+  background-color: rgb(49, 181, 224);
+  color: rgb(215, 14, 142);
+  border: 2px solid rgb(32, 254, 77);
+  border-radius: 4px;
+  padding: 10px;
+  
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  max-width: 15rem;
+  height: 50px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: rgb(215, 14, 142); /*fondo al hacer hover */
+  color: rgb(0, 255, 242); /* al hacer hover! */
+  border-color: rgb(32, 250, 254); /* Borde al hacer hover */
+}
+
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.player-container {
+  background-color: #121212;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 900px;
+  text-align: center;
+  position: relative;
+}
+
+.player-container video {
+  width: 100%;
+  max-height: 80vh;
+  border-radius: 10px;
+}
+
+.close-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  background-color: transparent;
+  color: rgb(0, 255, 242);
+  
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  
+  background-color: rgba(81, 81, 81, 0.263); /*fondo al hacer hover */
+  color: rgb(0, 255, 242); /* al hacer hover! */
+  border-color: 2px solid rgb(215, 14, 142); /* Borde al hacer hover */
+
+}

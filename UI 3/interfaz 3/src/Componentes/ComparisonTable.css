@@ -1,0 +1,279 @@
+/* src/Componentes/ComparisonTable.css */
+
+.comparison-table-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr; /* Ejemplo: 3 columnas, la primera más ancha que las otras dos */
+    grid-template-columns: 250px 1f 1fr; /* Ejemplo: la primera columna de 250px, las otras dos distribuyen el espacio restante */
+    grid-template-columns: repeat(3, 1fr); /* Ejemplo: 3 columnas de igual ancho, ocupando todo el espacio disponible */
+    grid-template-columns: 200px 200px 200px; /*3 columnas de ancho fijo */
+
+    /* Define 3 columnas: 1 para características (más estrecha), 2 para planes (más ancha) */
+    grid-template-columns: minmax(180px, 0.9fr) repeat(2, 1fr);
+    gap: 0; /* Sin espacio entre las celdas para un diseño continuo */
+    padding: 0;
+    background-color: transparent; /* El fondo general es transparente */
+    border-radius: 12px;
+    box-shadow: none;
+    margin: 40px auto; /* Centra la tabla */
+    width: 90vw; /* Ancho relativo */
+    max-width: 900px; /* Ancho máximo para pantallas grandes */
+    overflow: hidden; /* Importante para que los border-radius funcionen bien en las esquinas del grid */
+}
+
+.grid-cell {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    align-items: center; /* Por defecto, centrado horizontalmente */
+    justify-content: center; /* Por defecto, centrado verticalmente */
+    margin: 0;
+    text-align: center;
+    color: #ffffff;
+    box-sizing: border-box; /* Incluye padding y borde en el tamaño total */
+    position: relative; /* Para poder añadir pseudoelementos como las líneas */
+}
+
+/* Líneas divisorias entre filas para las columnas de los planes */
+.plan-value-cell::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%; /* Las líneas no llegan hasta los bordes para un look más limpio */
+    right: 10%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1); /* Línea divisoria más sutil */
+}
+/* La última celda de valores de plan (Audio Envolvente) no tiene línea inferior */
+.plan-value-cell:nth-last-of-type(2)::after, /* Para la última celda "No" en básica */
+.plan-value-cell:last-of-type::after { /* Para la última celda "Sí" en premium */
+    display: none;
+}
+
+
+/* ==================================================================== */
+/* ESTILOS PARA LA COLUMNA DE CARACTERÍSTICAS (izquierda) */
+.feature-header-cell {
+    background-color: #2b3541; /* Fondo azul oscuro */
+    text-align: left;
+    font-weight: bold;
+    color: #e926b2; /* Color rosa para "Características" */
+    justify-content: flex-end; /* Alinea el texto abajo */
+    padding: 25px 20px 10px;
+    align-items: center; /* Alinea el contenido a la izquierda */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* Línea inferior */
+    border-top-left-radius: 10px; /* Redondeado superior izquierdo */
+}
+
+.feature-name-header {
+    position: absolute;
+    text-align: center;
+   
+    padding-bottom: 20px;
+    font-size: 1.7em;
+    color: #e926b2; /* Color rosa para el título "Características" */
+    text-shadow: 2px 2px 8px rgba(0, 234, 255, 0.877);
+}
+
+
+.feature-cell {
+    display: flex;
+    background-color: #2b3541; /* Fondo azul oscuro para las celdas de características */
+    justify-content: center;
+    text-align: center;
+    font-weight: normal;
+    color: #f906c4; /* Texto blanco/gris claro para las características */
+    padding: 15px 20px;
+    align-items: center; /* Alinea el contenido a la izquierda */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+   
+}
+
+/* La última celda de características (antes de los botones) no tiene línea inferior */
+.feature-cell:last-of-type {
+    border-bottom: none;
+}
+
+/* Estilos de la celda vacía (debajo de características, al lado de los botones) */
+.empty-cell {
+    background-color: #2b3541;
+    /*border-bottom-left-radius: 10px;*/
+    padding: 15px 20px;
+}
+
+
+/* ==================================================================== */
+/* ESTILOS CLAVE PARA LAS "TARJETAS" DE LOS PLANES (Columnas) */
+.basic-plan-column {
+    background-color: #2b3541; /* Fondo azul oscuro para la tarjeta básica */
+    border-left: 1px solid rgba(255, 255, 255, 0.05); /* Borde separador sutil */
+    
+    
+}
+
+.premium-plan-column {
+    background-color: #33152c; /* Fondo morado/rosa oscuro para la tarjeta Premium */
+    border: 2px solid #e926b2; /* Borde más pronunciado rosa */
+    box-shadow: 0 0 20px rgba(233, 38, 178, 0.5); /* Sombra brillante */
+    z-index: 1; /* Para que quede por encima de la columna básica si se superponen */
+}
+
+/* ==================================================================== */
+/* MANEJO DE BORDES Y RADIOS DENTRO DE LAS COLUMNAS DE LOS PLANES */
+
+.plan-header-cell {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-align: center; /* Centrado de texto */
+    justify-content: flex-end; /* Alinea el contenido (título y línea) al fondo de la celda */
+    align-items: center; /* Centra horizontalmente el contenido */
+}
+
+.plan-value-cell {
+    font-size: 1.1em;
+    padding: 15px 10px;
+    text-align: center; /* Centrado de los valores */
+    justify-content: center; /* Centrado vertical */
+    align-items: center; /* Centrado horizontal */
+    display: flex; /* Necesario para centrar contenido como el emoji */
+}
+
+.button-cell {
+    justify-content: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+/* Redondeo de esquinas de las tarjetas de plan (solo las esquinas externas del grid) 
+.plan-header-cell.basic-plan-column {
+    border-top-right-radius: 10px;
+}*/
+
+/*
+.button-cell.basic-plan-column {
+    border-bottom-right-radius: 10px;
+}*/
+
+.plan-header-cell.basic-plan-column {
+    color: #e926b2;
+    text-shadow: 2px 5px 10px rgb(0, 174, 255);
+    //*text-shadow: #06edf9;*/
+}
+
+.plan-header-cell.premium-plan-column{
+    /* Esta celda ya tiene su propio border-top-right-radius si es la última */
+    /* Si no es la última, las reglas de abajo no se aplican */
+    border-top-right-radius: 10px;
+    color: rgba(255, 255, 6, 0.82);
+    text-shadow: 2px 5px 10px rgba(255, 255, 6, 0.82);
+}
+
+
+/*
+.button-cell.premium-plan-column {
+    /* Similar, si es la última celda de la fila 
+    border-bottom-right-radius: 10px;
+}*/
+
+
+/* Estilos para el separador debajo de los títulos de plan */
+.plan-title-line {
+    width: 50%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2); /* Más sutil */
+    margin-top: 10px;
+}
+
+/* Estilos de la nota de disponibilidad al pie */
+.availability-note-cell {
+    background-color: #2b3541; /* Mismo color de fondo que la columna de características */
+    color: rgba(255, 255, 255, 0.7); /* Color de texto más claro */
+    font-size: 0.9em;
+    padding: 10px 20px;
+    text-align: center;
+    grid-column: 1 / -1; /* Ocupa todas las columnas del grid */
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    justify-content: center; /* Alinea el texto al centro */
+    align-items: center;
+}
+
+/* ==================================================================== */
+/* MEDIA QUERIES (para pantallas pequeñas, como móviles) */
+@media (max-width: 768px) {
+    .comparison-table-grid {
+        grid-template-columns: 1fr; /* Una sola columna en móvil */
+        gap: 10px; /* Espacio entre las "tarjetas" */
+        padding: 10px;
+        width: 95vw;
+        max-width: none; /* No hay límite de ancho */
+    }
+
+    .grid-cell {
+        border-radius: 8px; /* Redondear cada celda individualmente */
+        margin-bottom: 0;
+        padding: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        /* Los siguientes se sobrescriben para el diseño móvil */
+        display: flex;
+        flex-direction: row; /* Características y valores en la misma fila */
+        justify-content: space-between; /* Espacio entre ellos */
+        align-items: center;
+        background-color: #2b3541;
+    }
+
+    /* Ajustes específicos para el diseño de características en móvil */
+    .feature-header-cell,
+    .feature-cell {
+        background-color: transparent; /* No un fondo de tarjeta separado */
+        border-radius: 0;
+        margin-bottom: 0;
+        border: none;
+        box-shadow: none;
+        padding: 10px;
+        align-items: center; /* Alinea el texto de la característica a la izquierda */
+        display: flex;
+        flex-direction: column; /* Volver a columna si es el título (ej: "Características") */
+        text-align: center;
+    }
+
+    .feature-header-cell {
+        padding-bottom: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Oculta la celda vacía en móvil si no es necesaria */
+    .empty-cell {
+        display: none;
+    }
+
+    /* Estilos para los botones en móvil (pueden ser tarjetas completas) */
+    .button-cell {
+        justify-content: center;
+        background-color: #2b3541;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    .button-cell.premium-plan-column {
+         background-color: #33152c;
+         border: 2px solid #e926b2;
+    }
+
+    /* Oculta la línea divisoria del título en móvil */
+    .plan-title-line {
+        display: none;
+    }
+
+    /* Ajuste para la nota de disponibilidad en móvil */
+    .availability-note-cell {
+        background-color: #2b3541;
+        text-align: center;
+        justify-content: center;
+        padding: 10px;
+        border-radius: 8px;
+    }
+}
