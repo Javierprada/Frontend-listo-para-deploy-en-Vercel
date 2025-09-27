@@ -241,7 +241,7 @@ const initialState = {
 
       
       <div className='title'>
-        <img className='img' src="public/IMG/Filmico 1.png" alt="Filmico 1"></img>
+        <img className='img' src="/IMG/Filmico 1.png" alt="Filmico 1"></img>
         <h3 className='peliculas-subidas' >Películas subidas</h3>
       </div>
 
