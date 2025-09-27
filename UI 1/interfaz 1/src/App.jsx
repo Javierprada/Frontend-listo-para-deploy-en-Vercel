@@ -8,7 +8,7 @@ import ForgotPasswordForm from './Views/ForgotPasswordForm';
 import AdminDashboard from './Views/AdminDashboard';
 import UploadMovie from './Views/UploadMovie';
 import MovieGallery from './Views/MovieGallery';
-import ProfileAdmin from './Views/profileAdmin';
+import ProfileAdmin from './Views/ProfileAdmin';
 
 
 
