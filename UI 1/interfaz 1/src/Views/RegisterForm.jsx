@@ -100,7 +100,7 @@ function RegisterForm () {
 
 
             <h2 className='Text-h2'>
-            <img  className='img-p'  src='public/IMG/Filmico 1.png' alt='Filmico' ></img>
+            <img  className='img-p'  src='/IMG/Filmico 1.png' alt='Filmico' ></img>
               
             Registrate</h2>
 
