@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import FilmicoIcon from '../assets/Filmico 1.png';
 import './MovieGallery.css';
 
 
@@ -48,7 +49,7 @@ function MovieGallery() {
 
         <div className='img-h2'>
 
-            <img className='img' src="public/IMG/Filmico 1.png" alt='Filmico 1' ></img>
+            <img className='img' src={FilmicoIcon} alt='Filmico 1' ></img>
             <h2>Galería de Películas</h2>
 
 
